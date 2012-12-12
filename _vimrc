@@ -69,9 +69,6 @@ if has("gui_running")
 	map <leader>pi :w<CR>:!cls<CR>:!python -i %<CR>
     endif
 endif
-" Universal tab setting for .py scripts
-au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-" ------------------------
 
 " Quick compile-and-run for a single c/cpp file
 " TODO: Direct execute the compiled program, if build is succesful?
@@ -141,3 +138,15 @@ if has("gui_running")
   endif
 endif
 "-------------------------------------------------
+
+" Default tab as 4-space width
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+" Universal tab setting for .py scripts
+au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+" ------------------------
+
+
+
