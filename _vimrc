@@ -151,3 +151,9 @@ au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 " Close buffer without closing current window
 nmap <leader>d :bprevious<CR>:bdelete #<CR>
 
+" SimpleCompile plugin
+" For windows MinGW
+call SingleCompile#ChooseCompiler('c','gcc')
+call SingleCompile#ChooseCompiler('cpp','g++')
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
