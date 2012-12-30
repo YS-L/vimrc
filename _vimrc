@@ -148,5 +148,6 @@ set autoindent
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 " ------------------------
 
-
+" Close buffer without closing current window
+nmap <leader>d :bprevious<CR>:bdelete #<CR>
 
