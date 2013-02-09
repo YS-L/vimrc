@@ -63,10 +63,10 @@ if has("gui_running")
     " If in gVim then no need to clear screen
     if has("gui_win32")
         map <leader>pp :w<CR>:!python %<CR>
-	map <leader>pi :w<CR>:!python -i %<CR>
+	map <leader>pi :w<CR>:!ipython -i %<CR>
     else
         map <leader>pp :w<CR>:!cls<CR>:!python %<CR>
-	map <leader>pi :w<CR>:!cls<CR>:!python -i %<CR>
+	map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR>
     endif
 endif
 
