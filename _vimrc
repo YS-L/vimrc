@@ -62,11 +62,11 @@ nmap <silent> <C-N> :silent noh<CR>
 if has("gui_running")
     " If in gVim then no need to clear screen
     if has("gui_win32")
-        map <leader>pp :w<CR>:!python %<CR>
-	map <leader>pi :w<CR>:!ipython -i %<CR>
+        map <leader>pp :w<CR>:!python %<CR><CR>
+	map <leader>pi :w<CR>:silent !ipython -i %<CR><CR>
     else
-        map <leader>pp :w<CR>:!cls<CR>:!python %<CR>
-	map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR>
+        map <leader>pp :w<CR>:!cls<CR>:!python %<CR><CR>
+	map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR><CR>
     endif
 endif
 
@@ -76,9 +76,9 @@ endif
 if has("gui_running")
     " If in gVim then no need to clear screen
     if has("gui_win32")
-	map <leader>cc :w<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR>
+	map <leader>cc :w<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR><CR>
     else
-	map <leader>cc :w<CR>:!cls<CR>:!echo Compiling...<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR>
+	map <leader>cc :w<CR>:!cls<CR>:!echo Compiling...<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR><CR>
     endif
 endif
 
