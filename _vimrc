@@ -57,6 +57,9 @@ set hidden
 " Map ^C-N for silencing the search results
 nmap <silent> <C-N> :silent noh<CR>
 
+" Let space key insert a single character
+nmap <space> i <esc>r
+
 " ---- Python related ----
 "  \pp to execute current script, \pi to execute and fall into -i mode
 if has("gui_running")
