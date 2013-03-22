@@ -94,12 +94,6 @@ call pathogen#helptags()
 set foldmethod=indent
 set foldlevel=99
 
-" Window splitting key binding (switch window)
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
 " Syntax coloring and validation
 syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
@@ -160,3 +154,9 @@ call SingleCompile#ChooseCompiler('c','gcc')
 call SingleCompile#ChooseCompiler('cpp','g++')
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr>
+
+" Window splitting key binding (switch window)
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
