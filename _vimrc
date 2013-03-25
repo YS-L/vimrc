@@ -126,7 +126,7 @@ if has("gui_running")
     set guifont=Inconsolata\ 12
   elseif has("gui_win32")
     set guifont=Consolas:h10
-    silent colorscheme mustang
+    silent colorscheme github
     " Hide menu- and tool- bars to show more texts
     set guioptions-=m
     set guioptions-=T
