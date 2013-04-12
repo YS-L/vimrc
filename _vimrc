@@ -1,5 +1,6 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
+"TODO What about unix?
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
@@ -64,13 +65,20 @@ nmap <space> i <esc>r
 "  \pp to execute current script, \pi to execute and fall into -i mode
 if has("gui_running")
     " If in gVim then no need to clear screen
-    if has("gui_win32")
-        map <leader>pp :w<CR>:!python %<CR><CR>
-	map <leader>pi :w<CR>:silent !ipython -i %<CR><CR>
-    else
-        map <leader>pp :w<CR>:!cls<CR>:!python %<CR><CR>
-	map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR><CR>
-    endif
+    if has("gui_win32") 
+        map <leader>pp :w<CR>:!ipython %<CR><CR>
+		map <leader>pi :w<CR>:silent !ipython -i %<CR><CR>
+	endif
+	"elseif has("gui_gtk2")
+        "map <leader>pp :w<CR>:!ipython %<CR><CR>
+		"map <leader>pi :w<CR>:!ipython -i %<CR><CR>
+	"endif
+	"TODO What if in unix / win's terminal / console?
+	"		<Or better let SimpleCompile handle it...>
+	"else
+        "map <leader>pp :w<CR>:!cls<CR>:!python %<CR><CR>
+		"map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR><CR>
+    "endif
 endif
 
 " Quick compile-and-run for a single c/cpp file
@@ -98,6 +106,7 @@ set foldlevel=99
 syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
+
 let g:pyflakes_use_quickfix = 0
 
 let g:pep8_map='<leader>8'
@@ -123,16 +132,16 @@ map <leader>g :GundoToggle<CR>
 " Put here to avoid some cant-find-color problem
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Inconsolata\ 10
   elseif has("gui_win32")
     set guifont=Consolas:h10
-    silent colorscheme github
-    " Hide menu- and tool- bars to show more texts
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
   endif
+  silent colorscheme github
+  " Hide menu- and tool- bars to show more texts
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
 endif
 "-------------------------------------------------
 
@@ -140,7 +149,7 @@ endif
 set tabstop=4
 set shiftwidth=4
 set autoindent
-
+ 
 " Universal tab setting for .py scripts
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 " ------------------------
