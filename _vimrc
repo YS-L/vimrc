@@ -132,7 +132,7 @@ map <leader>g :GundoToggle<CR>
 " Put here to avoid some cant-find-color problem
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 10
+    set guifont=Inconsolata\ 9
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
