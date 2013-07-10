@@ -69,28 +69,6 @@ if has("gui_running")
         map <leader>pp :w<CR>:!ipython %<CR><CR>
 		map <leader>pi :w<CR>:silent !ipython -i %<CR><CR>
 	endif
-	"elseif has("gui_gtk2")
-        "map <leader>pp :w<CR>:!ipython %<CR><CR>
-		"map <leader>pi :w<CR>:!ipython -i %<CR><CR>
-	"endif
-	"TODO What if in unix / win's terminal / console?
-	"		<Or better let SimpleCompile handle it...>
-	"else
-        "map <leader>pp :w<CR>:!cls<CR>:!python %<CR><CR>
-		"map <leader>pi :w<CR>:!cls<CR>:!ipython -i %<CR><CR>
-    "endif
-endif
-
-" Quick compile-and-run for a single c/cpp file
-" TODO: Direct execute the compiled program, if build is succesful?
-" 	(Now need to press a key after compiling)
-if has("gui_running")
-    " If in gVim then no need to clear screen
-    if has("gui_win32")
-	map <leader>cc :w<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR><CR>
-    else
-	map <leader>cc :w<CR>:!cls<CR>:!echo Compiling...<CR>:!g++ -Wall % -o %.exe<CR>:!%.exe<CR><CR>
-    endif
 endif
 
 " For pathogen plugin; following sontek's tutorial
@@ -169,3 +147,11 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+" source $MYVIMRC reloads the saved $MYVIMRC
+:nmap <Leader>s :source $MYVIMRC<cr>
+" opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
+:nmap <Leader>v :e $MYVIMRC<cr>
+
+" Case sensitivity in search
+:set ignorecase
