@@ -55,3 +55,9 @@
 [submodule "bundle/bro"]
 	path = bundle/bro
 	url = git://github.com/mephux/bro.vim.git
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/xptemplate"]
+	path = bundle/xptemplate
+	url = https://github.com/drmingdrmer/xptemplate.git
