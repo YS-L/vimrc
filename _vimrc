@@ -49,6 +49,8 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
+" let g:Tex_ViewRule_pdf='evince'
+
 " Show line number
 set nu
 
@@ -110,7 +112,7 @@ map <leader>g :GundoToggle<CR>
 " Put here to avoid some cant-find-color problem
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 9
+    set guifont=Monospace\ 9
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
