@@ -61,3 +61,6 @@
 [submodule "bundle/xptemplate"]
 	path = bundle/xptemplate
 	url = https://github.com/drmingdrmer/xptemplate.git
+[submodule "bundle/fsharp"]
+	path = bundle/fsharp
+	url = git://github.com/kongo2002/fsharp-vim.git
