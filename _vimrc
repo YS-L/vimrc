@@ -157,3 +157,5 @@ map <c-h> <c-w>h
 
 " Case sensitivity in search
 :set ignorecase
+
+:set nofoldenable
