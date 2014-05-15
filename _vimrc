@@ -158,4 +158,8 @@ map <c-h> <c-w>h
 " Case sensitivity in search
 :set ignorecase
 
+" Disable folding
 :set nofoldenable
+
+" Bye tilde files
+:set nobackup
