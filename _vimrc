@@ -163,3 +163,6 @@ map <c-h> <c-w>h
 
 " Bye tilde files
 :set nobackup
+
+" Recognize .md as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
