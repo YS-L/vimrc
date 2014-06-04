@@ -116,7 +116,13 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
-  silent colorscheme github
+
+  " Play a bit with colorscheme
+  "silent colorscheme github
+  " Solarized
+  set background=dark
+  silent colorscheme solarized
+
   " Hide menu- and tool- bars to show more texts
   set guioptions-=m
   set guioptions-=T
