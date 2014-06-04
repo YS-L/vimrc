@@ -17,7 +17,7 @@
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
-	url = https://github.com/sontek/minibufexpl.vim.git
+	url = https://github.com/vim-scripts/minibufexpl.vim.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
@@ -64,3 +64,6 @@
 [submodule "bundle/fsharp"]
 	path = bundle/fsharp
 	url = git://github.com/kongo2002/fsharp-vim.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
