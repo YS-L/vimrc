@@ -67,7 +67,7 @@ nmap <space> i <esc>r
 "  \pp to execute current script, \pi to execute and fall into -i mode
 if has("gui_running")
     " If in gVim then no need to clear screen
-    if has("gui_win32") 
+    if has("gui_win32")
         map <leader>pp :w<CR>:!ipython %<CR><CR>
 		map <leader>pi :w<CR>:silent !ipython -i %<CR><CR>
 	endif
@@ -135,7 +135,7 @@ endif
 set tabstop=4
 set shiftwidth=4
 set autoindent
- 
+
 " Universal tab setting for .py scripts
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
 " ------------------------
@@ -172,3 +172,23 @@ map <c-h> <c-w>h
 
 " Recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Highlight EOL whitespace smartly (avoid current line in construction)
+" Courtesy of http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
+
+" Kill all EOL whitespaces
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
