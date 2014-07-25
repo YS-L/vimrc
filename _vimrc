@@ -192,3 +192,7 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+" Indentation for html
+au BufRead,BufNewFile *.html set filetype=html
+au Filetype html setlocal ts=2 sw=2 expandtab
