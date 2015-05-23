@@ -196,3 +196,7 @@ nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 " Indentation for html
 au BufRead,BufNewFile *.html set filetype=html
 au Filetype html setlocal ts=2 sw=2 expandtab
+
+" Integration with clang-format
+map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
