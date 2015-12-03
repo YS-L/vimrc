@@ -200,3 +200,8 @@ au Filetype html setlocal ts=2 sw=2 expandtab
 " Integration with clang-format
 map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
