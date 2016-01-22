@@ -205,3 +205,6 @@ imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+
+" Hide filetypes
+let NERDTreeIgnore = ['\.pyc$']
