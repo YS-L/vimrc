@@ -76,3 +76,6 @@
 [submodule "bundle/vim-stylish-haskell"]
 	path = bundle/vim-stylish-haskell
 	url = https://github.com/nbouscal/vim-stylish-haskell.git
+[submodule "bundle/Dockerfile.vim"]
+	path = bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
