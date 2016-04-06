@@ -4,31 +4,6 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
-
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
@@ -112,7 +87,8 @@ map <leader>g :GundoToggle<CR>
 " Put here to avoid some cant-find-color problem
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Monospace\ 9
+    "set guifont=Monospace\ 9
+    set guifont=Inconsolata\ for\ Powerline\ 9
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
@@ -212,3 +188,10 @@ let NERDTreeIgnore = ['\.pyc$']
 " Binding for yapf
 map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
+
+set guifont=Inconsolata\ for\ Powerline
+:colorscheme solarized
+
+" Fix color in terminal
+set cursorline
+set t_Co=256
