@@ -117,19 +117,18 @@ if has("gui_running")
     set guifont=Consolas:h10
   endif
 
-  " Play a bit with colorscheme
-  "silent colorscheme github
-  " Solarized
-  set background=dark
-  silent colorscheme solarized
-
   " Hide menu- and tool- bars to show more texts
   set guioptions-=m
   set guioptions-=T
   set guioptions-=r
   set guioptions-=L
 endif
-"-------------------------------------------------
+
+" Play a bit with colorscheme
+"silent colorscheme github
+" Solarized
+set background=dark
+silent colorscheme solarized
 
 " Default tab as 4-space width
 set tabstop=4
@@ -138,7 +137,6 @@ set autoindent
 
 " Universal tab setting for .py scripts
 au FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
-" ------------------------
 
 " Close buffer without closing current window
 nmap <leader>d :bprevious<CR>:bdelete #<CR>
