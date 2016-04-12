@@ -189,7 +189,9 @@ let NERDTreeIgnore = ['\.pyc$']
 map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 
-set guifont=Inconsolata\ for\ Powerline\ 9
+" Strange, needs :h10 prefix after XQuartz
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+set guifont=Inconsolata\ for\ Powerline:h12
 set background=dark
 :colorscheme solarized
 
