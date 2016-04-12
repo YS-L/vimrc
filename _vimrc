@@ -189,7 +189,8 @@ let NERDTreeIgnore = ['\.pyc$']
 map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 
-set guifont=Inconsolata\ for\ Powerline
+set guifont=Inconsolata\ for\ Powerline\ 9
+set background=dark
 :colorscheme solarized
 
 " Fix color in terminal
