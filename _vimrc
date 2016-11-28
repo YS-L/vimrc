@@ -113,6 +113,7 @@ map <leader>g :GundoToggle<CR>
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Monospace\ 9
+    "set guifont=Inconsolata\ 12
   elseif has("gui_win32")
     set guifont=Consolas:h10
   endif
@@ -210,3 +211,8 @@ let NERDTreeIgnore = ['\.pyc$']
 " Binding for yapf
 map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
+
+" set t_Co=256
+
+" Haskell
+autocmd FileType haskell setlocal shiftwidth=2 tabstop=2 expandtab
