@@ -149,11 +149,11 @@ map <c-h> <c-w>h
 " Recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" Highlight EOL whitespace smartly (avoid current line in construction)
-" Courtesy of http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
-autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
-autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-highlight EOLWS ctermbg=red guibg=red
+" Strange, needs :h10 prefix after XQuartz
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+set guifont=Inconsolata\ for\ Powerline:h12
+set background=dark
+:colorscheme solarized
 
 " Kill all EOL whitespaces
 function! <SID>StripTrailingWhitespace()
@@ -189,12 +189,12 @@ let NERDTreeIgnore = ['\.pyc$']
 map <C-Y> :call yapf#YAPF()<cr>
 imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 
-" Strange, needs :h10 prefix after XQuartz
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
-set guifont=Inconsolata\ for\ Powerline:h12
-set background=dark
-:colorscheme solarized
-
 " Fix color in terminal
-set cursorline
+" set cursorline
 set t_Co=256
+
+" Highlight EOL whitespace smartly (avoid current line in construction)
+" Courtesy of http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
