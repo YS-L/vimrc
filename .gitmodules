@@ -79,3 +79,6 @@
 [submodule "bundle/Dockerfile.vim"]
 	path = bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "bundle/elm-vim"]
+	path = bundle/elm-vim
+	url = https://github.com/ElmCast/elm-vim.git
