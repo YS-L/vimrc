@@ -215,4 +215,4 @@ imap <C-Y> <c-o>:call yapf#YAPF()<cr>
 " set t_Co=256
 
 " Haskell
-autocmd FileType haskell setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
