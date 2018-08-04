@@ -76,3 +76,9 @@
 [submodule "bundle/vim-stylish-haskell"]
 	path = bundle/vim-stylish-haskell
 	url = https://github.com/nbouscal/vim-stylish-haskell.git
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc

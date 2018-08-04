@@ -53,6 +53,11 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'vim-easytags')
+call pathogen#infect()
+
 " Code folding
 set foldmethod=indent
 set foldlevel=99
@@ -198,3 +203,15 @@ set t_Co=256
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 highlight EOLWS ctermbg=red guibg=red
+
+" Fix CtrlP on larger projects (https://github.com/kien/ctrlp.vim/issues/234)
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
+" Sane Ignore For ctrlp
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  "\ 'file': '\.exe$\|\.so$\|\.dat$'
+  "\ }
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
