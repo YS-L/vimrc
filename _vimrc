@@ -154,12 +154,6 @@ map <c-h> <c-w>h
 " Recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-" Strange, needs :h10 prefix after XQuartz
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
-set guifont=Inconsolata\ for\ Powerline:h12
-set background=dark
-:colorscheme solarized
-
 " Kill all EOL whitespaces
 function! <SID>StripTrailingWhitespace()
     " Preparation: save last search, and cursor position.
@@ -215,3 +209,9 @@ let g:ctrlp_max_depth=40
   "\ }
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard']
+
+" Haskell
+autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 expandtab
+
+" CtrlP ignore
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
